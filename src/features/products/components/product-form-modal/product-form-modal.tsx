@@ -36,7 +36,7 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
     >
       <Form form={form} layout="vertical" onFinish={onSubmit}>
         <Form.Item
-          name="nameProduct"
+          name="description"
           label="Nome do Produto"
           rules={[{ required: true, message: "Informe o nome do produto" }]}
         >

@@ -131,7 +131,7 @@ export const ProductsPage = () => {
 
       {
         title: "Produto",
-        dataIndex: "nameProduct",
+        dataIndex: "description",
         ellipsis: true,
         sorter: (a: Product, b: Product) =>
           a.description.localeCompare(b.description),
