@@ -117,13 +117,6 @@ const MovementsTab = () => {
       sorter: (a, b) => a.quantity - b.quantity,
     },
     {
-      title: "Preço de Venda",
-      dataIndex: "salePrice",
-      render: (salePrice: number | null) =>
-        salePrice ? `R$ ${salePrice.toFixed(2)}` : "-",
-      sorter: (a, b) => (a.salePrice ?? 0) - (b.salePrice ?? 0),
-    },
-    {
       title: "Preço do Fornecedor",
       key: "supplierPrice",
       render: (_, record) => {
@@ -137,6 +130,13 @@ const MovementsTab = () => {
           products.find((p) => p.id === b.productId)?.supplierPrice ?? 0;
         return priceA - priceB;
       },
+    },
+    {
+      title: "Preço de Venda",
+      dataIndex: "salePrice",
+      render: (salePrice: number | null) =>
+        salePrice ? `R$ ${salePrice.toFixed(2)}` : "-",
+      sorter: (a, b) => (a.salePrice ?? 0) - (b.salePrice ?? 0),
     },
     {
       title: "Data",
