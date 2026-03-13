@@ -124,6 +124,21 @@ const MovementsTab = () => {
       sorter: (a, b) => (a.salePrice ?? 0) - (b.salePrice ?? 0),
     },
     {
+      title: "Preço do Fornecedor",
+      key: "supplierPrice",
+      render: (_, record) => {
+        const product = products.find((p) => p.id === record.productId);
+        return product ? `R$ ${product.supplierPrice.toFixed(2)}` : "-";
+      },
+      sorter: (a: StockMovement, b: StockMovement) => {
+        const priceA =
+          products.find((p) => p.id === a.productId)?.supplierPrice ?? 0;
+        const priceB =
+          products.find((p) => p.id === b.productId)?.supplierPrice ?? 0;
+        return priceA - priceB;
+      },
+    },
+    {
       title: "Data",
       dataIndex: "date",
       render: (date: string) => new Date(date).toLocaleDateString("pt-BR"),
