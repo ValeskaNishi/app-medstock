@@ -36,16 +36,16 @@ export const ProductFormModal: React.FC<ProductFormModalProps> = ({
     >
       <Form form={form} layout="vertical" onFinish={onSubmit}>
         <Form.Item
-          name="description"
-          label="Descrição"
-          rules={[{ required: true, message: "Informe a descrição" }]}
+          name="nameProduct"
+          label="Nome do Produto"
+          rules={[{ required: true, message: "Informe o nome do produto" }]}
         >
           <Input placeholder="Ex: Dipirona 500mg" />
         </Form.Item>
         <Form.Item
           name="type"
-          label="Tipo"
-          rules={[{ required: true, message: "Selecione o tipo" }]}
+          label="Categoria"
+          rules={[{ required: true, message: "Selecione a categoria" }]}
         >
           <Select
             placeholder="Selecione o tipo"
